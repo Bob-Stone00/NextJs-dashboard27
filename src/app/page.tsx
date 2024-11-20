@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import Sidebarnav from "./dashboard/ui/sidebarnav";
 import { Dashboard } from "./dashboard/ui/dashboard";
 
