@@ -2,7 +2,7 @@ import Image from "next/image";
 import VendorDetails from "./VendorDetails";
 import PrTable from "./PrTable";
 import PaymentDetails from "./PaymentDetails";
-import BottomNav from "./bottomNav";
+
 import TotalNav from "./TotalNav";
 import TopSideBar from "./TopSideBar";
 
