@@ -17,7 +17,7 @@ const TopSideBar: React.FC = () => {
             <p className="text-sm">Purchase</p>
           </div>
 
-          <div className="flex gap-2 p-2 rounded-lg  w-[10%] align-center justify-center ">
+          <div className="flex gap-2 p-2 rounded-lg  w-[10%] align-center justify-center mr-[20px] ">
             <Image
               src="/images/corner-up-right.svg"
               alt="feather"

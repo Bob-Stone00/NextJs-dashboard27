@@ -11,10 +11,19 @@ const PrTable: React.FC = () => {
             Use the search bar to search and select sale products.
           </p>
         </div>
-        <div className="space-x-2">
-          <button className="px-4 py-2 text-sm text-gray-700 border rounded-md ">
-            View
-          </button>
+        <div className="space-x-2 flex">
+          <div className="flex relative items-center ">
+            <Image
+              src="/images/grid.svg"
+              alt="grid"
+              width={12}
+              height={12}
+              className="absolute left-[20px]"
+            />
+            <button className="px-4 py-2 text-sm text-gray-700 border rounded-md w-[100px]">
+              View
+            </button>
+          </div>
           <button className="px-4 py-2 text-sm text-white bg-black rounded-md ">
             + Add Product
           </button>
@@ -22,10 +31,18 @@ const PrTable: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-2 gap-4">
+        <Image
+          src="/images/search.svg"
+          alt="add"
+          width={25}
+          height={25}
+          className="absolute left-[5%] mt-2"
+        />
+
         <input
           type="text"
           placeholder="Search products..."
-          className="w-[60rem] px-4 py-2 border rounded-md  focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="w-[60rem] px-10 py-2 border rounded-md  focus:ring-2 focus:ring-blue-500 focus:border-blue-500 "
         />
         <input
           type="text"
@@ -38,7 +55,7 @@ const PrTable: React.FC = () => {
           alt="add"
           width={25}
           height={25}
-          className="absolute left-[90%] mt-2"
+          className="absolute left-[93%] mt-2"
         />
       </div>
 
@@ -49,7 +66,7 @@ const PrTable: React.FC = () => {
               <th className="py-3">Product name</th>
               <th className="py-3 text-center">Quantity</th>
               <th className="py-3 text-center">Purchase Price</th>
-              <th className="py-3 text-center">Selling Price</th>
+              <th className="py-3 text-left">Selling Price</th>
               <th className="py-3 text-center">Montant “HT”</th>
               <th className="py-3 text-center"></th>
             </tr>
@@ -107,11 +124,10 @@ const PrTable: React.FC = () => {
                     type="number"
                     value={product.quantity}
                     className="w-16 px-2 py-1 border rounded-md shadow-sm text-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    readOnly
                   />
                 </td>
-                <td className="py-3 text-center ">
-                  <div className="border p-2 rounded-lg w-[70%]">
+                <td className="py-3 text-center flex justify-center">
+                  <div className="border p-2 rounded-lg w-[70%] ">
                     {product.purchasePrice.toFixed(2)} DZD
                   </div>
                 </td>

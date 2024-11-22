@@ -1,9 +1,10 @@
 import React from "react";
+import Image from "next/image";
 
 const VendorDetails: React.FC = () => {
   return (
     <div className="grid grid-cols-2 gap-6 border-gray-500">
-      <div className="space-y-4 border p-5 rounded-lg">
+      <div className="space-y-4 border p-5 rounded-lg w-[110%]">
         <h2 className="text-lg font-semibold">Purchase Detail</h2>
         <div className="grid grid-cols-4 gap-4">
           <div>
@@ -54,7 +55,7 @@ const VendorDetails: React.FC = () => {
 
           <div>
             <label
-              className="block text-xs text-gray-600"
+              className="block text-sm text-gray-600"
               htmlFor="order-number"
             >
               N° du bon de commande
@@ -73,15 +74,18 @@ const VendorDetails: React.FC = () => {
         </div>
       </div>
 
-      <div className="space-y-4  border p-5 rounded-lg">
+      <div className="space-y-4  border p-5 rounded-lg w-[90%] relative left-[10%]">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold">Vendor Detail</h2>
-          <button className="p-2 text-sm text-white bg-black rounded-md ">
-            + Add Vendor
-          </button>
+          <h2 className="text-lg font-semibold ">Vendor Detail</h2>
+
+          <div className="flex gap-2">
+            <button className="p-2 text-sm text-black  rounded-md border font-medium">
+              + Add Vendor
+            </button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 ">
           <div>
             <label className="block text-sm text-gray-600" htmlFor="vendor">
               Vendor

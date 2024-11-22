@@ -74,8 +74,8 @@ export function Dashboard() {
 
             <div className="w-[1px] h-[30px] bg-gray-500"></div>
 
-            <select>
-              <option>More</option>
+            <select className="bg-transparent">
+              <option className="bg-transparent">More</option>
             </select>
           </div>
         </div>

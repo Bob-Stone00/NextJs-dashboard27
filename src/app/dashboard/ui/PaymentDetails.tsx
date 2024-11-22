@@ -25,6 +25,8 @@ const PaymentDetails: React.FC = () => {
               className="w-4 h-4 text-blue-500 focus:ring-blue-400"
             />
             <span className="text-gray-700 text-xs">Partial Payment</span>
+
+            <Image src="/images/eye.svg" alt="feather" width={12} height={12} />
           </label>
         </div>
       </div>

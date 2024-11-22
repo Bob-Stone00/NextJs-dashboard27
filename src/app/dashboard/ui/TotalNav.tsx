@@ -30,7 +30,7 @@ const TotalNav: React.FC = () => {
         <p className="text-sm font-semibold text-gray-900">
           Montant total: <span className="text-black">DZD 1252.00</span>
         </p>
-        <p className="text-sm text-gray-600">Quantité totale: 6</p>
+        <p className="text-sm text-gray-600 text-left">Quantité totale: 6</p>
       </div>
     </div>
   );
