@@ -39,7 +39,6 @@ const Sidebarnav = () => {
 
   return (
     <>
-      {/* Mobile Menu Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-gray-100 hover:bg-gray-200"
@@ -47,7 +46,6 @@ const Sidebarnav = () => {
         <Image src="/images/menu.svg" alt="menu" width={24} height={24} />
       </button>
 
-      {/* Overlay for mobile */}
       {isOpen && (
         <div
           className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
@@ -55,7 +53,6 @@ const Sidebarnav = () => {
         />
       )}
 
-      {/* Sidebar Container */}
       <div
         className={`
         fixed top-0 left-0 h-full z-40
@@ -66,19 +63,16 @@ const Sidebarnav = () => {
         w-16 min-w-[4rem]
       `}
       >
-        {/* Top Logo Section */}
         <div className="p-3 border-b border-gray h-[50px]">
           <NavIcon src={topIcon.path} alt={topIcon.name} />
         </div>
 
-        {/* Main Navigation Icons */}
         <div className="p-3 pt-5 h-[65vh] flex flex-col gap-8 items-center">
           {mainIcons.map((icon, index) => (
             <NavIcon key={index} src={icon.path} alt={icon.name} />
           ))}
         </div>
 
-        {/* Bottom Navigation Icons */}
         <div className="p-3 border-t border-gray mt-auto flex flex-col gap-8 items-center">
           {bottomIcons.map((icon, index) => (
             <NavIcon key={index} src={icon.path} alt={icon.name} />

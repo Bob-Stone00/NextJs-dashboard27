@@ -4,7 +4,6 @@ import Image from "next/image";
 const PrTable: React.FC = () => {
   return (
     <div className="p-4 md:p-6 border rounded-lg space-y-4 md:space-y-6">
-      {/* Header Section */}
       <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
         <div className="w-full md:w-auto">
           <h2 className="text-lg font-semibold">Purchase Product</h2>
@@ -31,7 +30,6 @@ const PrTable: React.FC = () => {
         </div>
       </div>
 
-      {/* Search Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="relative">
           <Image
@@ -63,7 +61,6 @@ const PrTable: React.FC = () => {
         </div>
       </div>
 
-      {/* Table Section */}
       <div className="overflow-x-auto -mx-4 md:mx-0">
         <div className="min-w-[800px] px-4 md:px-0">
           <table className="w-full text-left border-collapse">

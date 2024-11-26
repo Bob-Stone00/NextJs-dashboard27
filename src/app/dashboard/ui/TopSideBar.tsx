@@ -52,9 +52,7 @@ const TopSideBar = () => {
   return (
     <div className="relative border-b w-full h-[50px] z-30 bg-white">
       <div className="flex justify-between items-center px-4 h-full">
-        {/* Left Section */}
         <div className="flex items-center gap-4">
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -64,7 +62,6 @@ const TopSideBar = () => {
             </button>
           </div>
 
-          {/* Desktop Menu Items */}
           <div className="hidden md:flex items-center gap-4">
             {leftMenuItems.map((item, index) => (
               <div
@@ -90,7 +87,6 @@ const TopSideBar = () => {
           </div>
         </div>
 
-        {/* Right Section */}
         <div className="flex items-center gap-2 sm:gap-4">
           {rightMenuItems.map((item, index) => (
             <div
@@ -117,7 +113,6 @@ const TopSideBar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="md:hidden">
           <div

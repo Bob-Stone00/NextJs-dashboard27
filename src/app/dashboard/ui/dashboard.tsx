@@ -13,7 +13,6 @@ export function Dashboard() {
 
       <div className="w-[95%] my-[20px] mx-[auto]">
         <div className="flex justify-between mt-[10px] px-4 sm:px-6 md:px-8">
-          {/* Left Section */}
           <div className="flex gap-3 items-center">
             <Image
               src="/images/bx-package (1).svg"
@@ -27,7 +26,6 @@ export function Dashboard() {
             </h2>
           </div>
 
-          {/* Right Section */}
           <div className="flex items-center">
             <Image
               src="/images/bx-x.svg"
@@ -40,7 +38,6 @@ export function Dashboard() {
 
         <div className="flex bg-custom-bg w-full min-h-[55px] my-5 rounded-lg overflow-x-auto">
           <div className="p-2 mx-4 flex flex-wrap gap-4 items-center justify-start w-full">
-            {/* Add Note */}
             <div className="flex gap-2 items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition-colors min-w-fit">
               <Image src="/images/plus.svg" alt="add" width={20} height={20} />
               <p className="text-sm font-semibold whitespace-nowrap">
@@ -50,7 +47,6 @@ export function Dashboard() {
 
             <div className="w-[1px] h-[30px] bg-gray-300 hidden sm:block"></div>
 
-            {/* Preview */}
             <div className="flex gap-2 items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition-colors min-w-fit">
               <Image src="/images/book.svg" alt="add" width={20} height={20} />
               <p className="text-sm font-semibold whitespace-nowrap">Preview</p>
@@ -58,7 +54,6 @@ export function Dashboard() {
 
             <div className="w-[1px] h-[30px] bg-gray-300 hidden sm:block"></div>
 
-            {/* Mark As Paid */}
             <div className="hidden md:flex gap-2 items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition-colors min-w-fit">
               <Image
                 src="/images/bx-dollar-circle (1).svg"
@@ -73,7 +68,6 @@ export function Dashboard() {
 
             <div className="w-[1px] h-[30px] bg-gray-300 hidden md:block"></div>
 
-            {/* Print */}
             <div className="hidden md:flex gap-2 items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition-colors min-w-fit">
               <Image
                 src="/images/printer.svg"
@@ -86,7 +80,6 @@ export function Dashboard() {
 
             <div className="w-[1px] h-[30px] bg-gray-300 hidden md:block"></div>
 
-            {/* More Select with mobile responsiveness */}
             <div className="relative">
               <select className="bg-transparent hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition-colors focus:outline-none appearance-none pr-8">
                 <option value="">More</option>

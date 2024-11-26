@@ -4,7 +4,6 @@ import Image from "next/image";
 const PaymentDetails = () => {
   return (
     <div className="p-4 sm:p-6 bg-custom-bg rounded-lg flex flex-col md:flex-row gap-6 md:gap-8">
-      {/* Payment Details Section */}
       <div className="w-full md:w-1/2">
         <h2 className="text-lg font-semibold mb-4">Payment details</h2>
         <div className="flex flex-col sm:flex-row gap-3">
@@ -52,7 +51,6 @@ const PaymentDetails = () => {
         </div>
       </div>
 
-      {/* Order Summary Section */}
       <div
         className="w-full md:w-1/2 md:border-l md:pl-8 pt-6 md:pt-0 
                       border-t md:border-t-0"
