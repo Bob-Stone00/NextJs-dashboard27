@@ -13,6 +13,17 @@ export default {
         foreground: "var(--foreground)",
         "custom-bg": "#F1F5F9",
       },
+      fontFamily: {
+        sans: [
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol",
+          "Noto Color Emoji",
+        ],
+      },
     },
   },
   plugins: [],

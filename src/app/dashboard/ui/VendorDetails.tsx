@@ -2,10 +2,10 @@ import React from "react";
 
 const VendorDetails: React.FC = () => {
   return (
-    <div className="grid grid-cols-2 gap-6 border-gray-500">
-      <div className="space-y-4 border p-5 rounded-lg w-[110%]">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 border-gray-500 p-4">
+      <div className="space-y-4 border p-5 rounded-lg w-full">
         <h2 className="text-lg font-semibold">Purchase Detail</h2>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div>
             <label
               className="block text-sm text-gray-600"
@@ -36,7 +36,6 @@ const VendorDetails: React.FC = () => {
               readOnly
             />
           </div>
-
           <div>
             <label
               className="block text-sm text-gray-600"
@@ -51,7 +50,6 @@ const VendorDetails: React.FC = () => {
               <option>Depot 2400</option>
             </select>
           </div>
-
           <div>
             <label
               className="block text-sm text-gray-600"
@@ -66,25 +64,22 @@ const VendorDetails: React.FC = () => {
               <option>BCF-00325</option>
             </select>
           </div>
-
-          <a href="" className="text-sm text-blue-500 ">
+          <a href="#" className="text-sm text-blue-500">
             More information
           </a>
         </div>
       </div>
 
-      <div className="space-y-4  border p-5 rounded-lg w-[90%] relative left-[10%]">
+      <div className="space-y-4 border p-5 rounded-lg w-full">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold ">Vendor Detail</h2>
-
+          <h2 className="text-lg font-semibold">Vendor Detail</h2>
           <div className="flex gap-2">
-            <button className="p-2 text-sm text-black  rounded-md border font-medium">
+            <button className="p-2 text-sm text-black rounded-md border font-medium">
               + Add Vendor
             </button>
           </div>
         </div>
-
-        <div className="grid grid-cols-2 gap-4 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm text-gray-600" htmlFor="vendor">
               Vendor
@@ -96,7 +91,6 @@ const VendorDetails: React.FC = () => {
               <option className="text-xs">Kaci Vachouch</option>
             </select>
           </div>
-
           <div>
             <label className="block text-sm text-gray-600" htmlFor="debt">
               Debt
@@ -110,8 +104,7 @@ const VendorDetails: React.FC = () => {
             />
           </div>
         </div>
-
-        <a href="" className="text-sm text-blue-500 ">
+        <a href="#" className="text-sm text-blue-500">
           More information
         </a>
       </div>

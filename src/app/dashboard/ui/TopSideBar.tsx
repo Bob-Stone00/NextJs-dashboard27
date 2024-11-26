@@ -1,77 +1,153 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
-const TopSideBar: React.FC = () => {
+const TopSideBar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const leftMenuItems = [
+    {
+      icon: "/images/shopping-cart.svg",
+      text: "Purchase",
+      type: "button",
+      className: "bg-custom-bg",
+    },
+    {
+      icon: "/images/corner-up-right.svg",
+      text: "Avenoirs",
+      type: "button",
+    },
+    {
+      icon: "/images/sliders.svg",
+      text: "Purchase Preference",
+      type: "select",
+      options: ["Purchase Preference"],
+    },
+  ];
+
+  const rightMenuItems = [
+    {
+      icon: "/images/bell.svg",
+      type: "icon",
+      className: "bg-gray-100",
+    },
+    {
+      type: "select",
+      options: ["EN"],
+      className: "border bg-white w-[45px]",
+    },
+    {
+      icon: "/images/sun.svg",
+      type: "icon",
+      className: "border bg-gray-100",
+    },
+    {
+      icon: "/images/bxs-cricket-ball.svg",
+      type: "icon",
+      className: "border bg-gray-100",
+    },
+  ];
+
   return (
-    <div className="border-b w-full h-[50px] z-2">
-      <div className="flex justify-between align-center justify-center">
-        <div className="pl-8 pt-2 flex gap-16">
-          <div className="flex gap-2 p-2 rounded-lg bg-custom-bg  w-[20%] align-center justify-center ">
-            <Image
-              src="/images/shopping-cart.svg"
-              alt="feather"
-              width={18}
-              height={15}
-            />
-
-            <p className="text-sm">Purchase</p>
+    <div className="relative border-b w-full h-[50px] z-30 bg-white">
+      <div className="flex justify-between items-center px-4 h-full">
+        {/* Left Section */}
+        <div className="flex items-center gap-4">
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              <Image src="/images/menu.svg" alt="Menu" width={20} height={20} />
+            </button>
           </div>
 
-          <div className="flex gap-2 p-2 rounded-lg  w-[10%] align-center justify-center mr-[20px] ">
-            <Image
-              src="/images/corner-up-right.svg"
-              alt="feather"
-              width={18}
-              height={15}
-            />
-
-            <p className="text-sm">Avenoirs</p>
-          </div>
-
-          <div className="flex gap-2 p-2 rounded-lg  - w-[10%] align-center justify-center ml-[30px]">
-            <Image
-              src="/images/sliders.svg"
-              alt="feather"
-              width={18}
-              height={15}
-            />
-
-            <select className="text-sm">
-              <option>Purchase Preference</option>
-            </select>
+          {/* Desktop Menu Items */}
+          <div className="hidden md:flex items-center gap-4">
+            {leftMenuItems.map((item, index) => (
+              <div
+                key={index}
+                className={`flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 transition-colors ${
+                  item.className || ""
+                }`}
+              >
+                <Image src={item.icon} alt={item.text} width={18} height={15} />
+                {item.type === "select" ? (
+                  <select className="text-sm font-semibold bg-transparent border-none focus:outline-none cursor-pointer">
+                    {item.options?.map((option) => (
+                      <option key={option}>{option}</option>
+                    ))}
+                  </select>
+                ) : (
+                  <p className="text-sm font-semibold whitespace-nowrap">
+                    {item.text}
+                  </p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="pr-8 pt-2 flex gap-2">
-          <div className="flex gap-2 p-2 rounded-lg  w-[40px] align-center justify-center ">
-            <Image
-              src="/images/bell.svg"
-              alt="feather"
-              width={18}
-              height={15}
-            />
-          </div>
-
-          <div className="flex p-1 rounded-lg border  w-[45px] ">
-            <select className="text-xs">
-              <option>EN</option>
-            </select>
-          </div>
-
-          <div className="flex p-1 rounded-lg border  w-[40px] align-center justify-center">
-            <Image src="/images/sun.svg" alt="feather" width={18} height={15} />
-          </div>
-
-          <div className="flex p-1 rounded-lg border  w-[40px] align-center justify-center">
-            <Image
-              src="/images/bxs-cricket-ball.svg"
-              alt="feather"
-              width={18}
-              height={15}
-            />
-          </div>
+        {/* Right Section */}
+        <div className="flex items-center gap-2 sm:gap-4">
+          {rightMenuItems.map((item, index) => (
+            <div
+              key={index}
+              className={`
+                ${item.type === "select" ? "hidden sm:flex" : "flex"}
+                ${item.type === "icon" && index > 1 ? "hidden sm:flex" : ""}
+                items-center justify-center p-2 rounded-lg w-[40px]
+                hover:bg-gray-200 transition-colors
+                ${item.className || ""}
+              `}
+            >
+              {item.type === "select" ? (
+                <select className="text-xs bg-transparent border-none focus:outline-none cursor-pointer">
+                  {item.options?.map((option) => (
+                    <option key={option}>{option}</option>
+                  ))}
+                </select>
+              ) : (
+                <Image src={item.icon!} alt="Icon" width={18} height={15} />
+              )}
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden">
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <div className="fixed top-[50px] left-0 w-full bg-white border-b shadow-lg z-40 animate-slideDown">
+            {leftMenuItems.map((item, index) => (
+              <div
+                key={index}
+                className={`flex items-center gap-2 p-4 hover:bg-gray-100 transition-colors ${
+                  item.className || ""
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Image src={item.icon} alt={item.text} width={18} height={15} />
+                {item.type === "select" ? (
+                  <select className="text-sm font-semibold bg-transparent border-none focus:outline-none w-full">
+                    {item.options?.map((option) => (
+                      <option key={option}>{option}</option>
+                    ))}
+                  </select>
+                ) : (
+                  <p className="text-sm font-semibold">{item.text}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

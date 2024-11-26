@@ -8,12 +8,13 @@ import TopSideBar from "./TopSideBar";
 
 export function Dashboard() {
   return (
-    <div className="w-[96%]  absolute top-[0] left-[4%]">
+    <div className="w-[96%]  absolute top-[0] left-[4%] font-sans font-semibold">
       <TopSideBar />
 
       <div className="w-[95%] my-[20px] mx-[auto]">
-        <div className="flex justify-between mt-[10px]">
-          <div className="flex gap-3 ">
+        <div className="flex justify-between mt-[10px] px-4 sm:px-6 md:px-8">
+          {/* Left Section */}
+          <div className="flex gap-3 items-center">
             <Image
               src="/images/bx-package (1).svg"
               alt="feather"
@@ -21,10 +22,13 @@ export function Dashboard() {
               height={25}
             />
 
-            <h2 className="font-medium text-2xl">Nouveau bon de reception</h2>
+            <h2 className="font-semibold text-lg sm:text-xl md:text-2xl">
+              Nouveau bon de reception
+            </h2>
           </div>
 
-          <div>
+          {/* Right Section */}
+          <div className="flex items-center">
             <Image
               src="/images/bx-x.svg"
               alt="feather"
@@ -34,49 +38,74 @@ export function Dashboard() {
           </div>
         </div>
 
-        <div className="flex bg-custom-bg w-full h-[70px] my-[20px] rounded-lg">
-          <div className="p-2 ml-4 flex gap-4 items-center">
-            <div className="flex gap-2 items-center">
+        <div className="flex bg-custom-bg w-full min-h-[55px] my-5 rounded-lg overflow-x-auto">
+          <div className="p-2 mx-4 flex flex-wrap gap-4 items-center justify-start w-full">
+            {/* Add Note */}
+            <div className="flex gap-2 items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition-colors min-w-fit">
               <Image src="/images/plus.svg" alt="add" width={20} height={20} />
-              <p className="text-xm">Add Note</p>
+              <p className="text-sm font-semibold whitespace-nowrap">
+                Add Note
+              </p>
             </div>
 
-            <div className="w-[1px] h-[30px] bg-gray-500"></div>
+            <div className="w-[1px] h-[30px] bg-gray-300 hidden sm:block"></div>
 
-            <div className="flex gap-2 items-center">
+            {/* Preview */}
+            <div className="flex gap-2 items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition-colors min-w-fit">
               <Image src="/images/book.svg" alt="add" width={20} height={20} />
-              <p className="text-xm">Preview</p>
+              <p className="text-sm font-semibold whitespace-nowrap">Preview</p>
             </div>
 
-            <div className="w-[1px] h-[30px] bg-gray-500"></div>
+            <div className="w-[1px] h-[30px] bg-gray-300 hidden sm:block"></div>
 
-            <div className="flex gap-2 items-center">
+            {/* Mark As Paid */}
+            <div className="hidden md:flex gap-2 items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition-colors min-w-fit">
               <Image
                 src="/images/bx-dollar-circle (1).svg"
                 alt="add"
                 width={20}
                 height={20}
               />
-              <p className="text-xm">Mark As Paid</p>
+              <p className="text-sm font-semibold whitespace-nowrap">
+                Mark As Paid
+              </p>
             </div>
 
-            <div className="w-[1px] h-[30px] bg-gray-500"></div>
+            <div className="w-[1px] h-[30px] bg-gray-300 hidden md:block"></div>
 
-            <div className="flex gap-2 items-center">
+            {/* Print */}
+            <div className="hidden md:flex gap-2 items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition-colors min-w-fit">
               <Image
                 src="/images/printer.svg"
                 alt="add"
                 width={20}
                 height={20}
               />
-              <p className="text-xm">Print</p>
+              <p className="text-sm whitespace-nowrap">Print</p>
             </div>
 
-            <div className="w-[1px] h-[30px] bg-gray-500"></div>
+            <div className="w-[1px] h-[30px] bg-gray-300 hidden md:block"></div>
 
-            <select className="bg-transparent">
-              <option className="bg-transparent">More</option>
-            </select>
+            {/* More Select with mobile responsiveness */}
+            <div className="relative">
+              <select className="bg-transparent hover:bg-gray-100 p-2 rounded-lg cursor-pointer transition-colors focus:outline-none appearance-none pr-8">
+                <option value="">More</option>
+                <option value="mark-paid" className="md:hidden">
+                  Mark As Paid
+                </option>
+                <option value="print" className="md:hidden">
+                  Print
+                </option>
+              </select>
+              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                <Image
+                  src="/images/bx-chevron-down (1).svg"
+                  alt="chevron"
+                  width={16}
+                  height={16}
+                />
+              </div>
+            </div>
           </div>
         </div>
 
