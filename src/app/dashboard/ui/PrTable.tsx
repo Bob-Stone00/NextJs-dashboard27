@@ -73,7 +73,7 @@ const PrTable: React.FC = () => {
                 <th className="py-3 text-center">Quantity</th>
                 <th className="py-3 text-center">Purchase Price</th>
                 <th className="py-3 text-center">Selling Price</th>
-                <th className="py-3 text-center">Montant "HT"</th>
+                <th className="py-3 text-center">Montant &quot;HT&quot;</th>
                 <th className="py-3 text-center"></th>
               </tr>
             </thead>

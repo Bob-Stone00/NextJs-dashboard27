@@ -88,7 +88,7 @@ const PaymentDetails = () => {
             <span className="font-medium">25</span>
           </div>
           <div className="flex justify-between text-gray-700 text-sm">
-            <span>Montant "HT"</span>
+            <span>Montant &quot;HT&quot;</span>
             <span className="font-medium">DZD 1240.00</span>
           </div>
           <div className="flex justify-between text-gray-900 font-semibold">
